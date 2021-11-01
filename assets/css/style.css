@@ -23,6 +23,7 @@ header {
     align-items: center;
     margin: 0 var(--col-margin);
     justify-content: space-between;
+    background-color: white;
 }
 header nav {
     height: 100%;
@@ -46,12 +47,14 @@ header nav ul li {
     justify-content: center;
 }
 #main-title {
-    background-color: rgba(255, 255, 255, 0.54);
     background-blend-mode: multiply;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 32px var(--col-margin) 80px;
+}
+#main-title>div {
+    z-index: -1;
 }
 #main-title h1 {
     font-size: 4.4em;
@@ -76,25 +79,31 @@ header nav ul li {
     background-repeat: no-repeat;
     background-position: top;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     color: white;
 }
-.gallery-image:hover {
+.gallery-image:hover + .gallery-image .image-info{
+    display: flex;
+    /*todo меняются местами*/
+}
+.gallery-image .image-info {
+    display: none;
+    padding-left: 35px;
     background-color: rgba(51, 50, 50, 0.62);
     background-blend-mode: multiply;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.gallery-image>div {
-    margin: 0 70px 35px 35px;
-}
-.gallery-image>div:first-child {
-    margin-top: 70px;
+.gallery-image .image-info div:first-child {
     font-size: 2.2em;
     font-weight: lighter;
+    padding-top: 70px;
+}
+.gallery-image .image-info div:last-child {
+    padding-bottom: 15px;
 }
 #about {
     width: 100%;
-    display: none;
 }
 #about img {
     width: 100%;
@@ -104,7 +113,7 @@ footer {
    height: 100%;
     position: fixed;
     top: 0;
-    z-index: -1;
+    z-index: -999;
 }
 footer div:first-child {
     height: 50%;
@@ -117,4 +126,8 @@ footer div:last-child {
 }
 .w-50 {
     width: 50%;
+}
+
+.d-none {
+    display: none !important;
 }

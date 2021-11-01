@@ -6,72 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div>
-                <img src="assets/images/logo.png" alt="" width="160px">
-            </div>
-            <nav>
-                <ul>
-                    <li onclick="goToPage('about')">About</li>
-                    <li onclick="goToPage('gallery')">Gallery</li>
-                    <li onclick="goToPage('')">How to buy</li>
-                    <li onclick="goToPage('')">Contact</li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div id="main-title">
-                <div class="w-50">
-                    <h1>Gallery</h1>
-                    <p>Gallery is divided into sections according to their residences</p>
-                </div>
-                <div class="w-50">
-                    <h1></h1>
-                    <p></p>
-                </div>
-            </div>
-            <div id="gallery">
-                <div class="gallery-image"
-                     style="background-image: url('assets/images/pic1.png')">
-                    <div>
-                        <p>Premium level apartments with the dest views of capital</p>
-                    </div>
-                    <div>
-                        <p>10 photo</p>
-                    </div>
-                </div>
-                <div class="gallery-image"
-                     style="background-image: url('assets/images/pic2.png')">
-                    <div>
-                        <p>Premium level apartments with the dest views of capital</p>
-                    </div>
-                    <div>
-                        <p>10 photo</p>
-                    </div>
-                </div>
-                <div class="gallery-image"
-                     style="background-image: url('assets/images/pic3.png')">
-                    <div>
-                        <p>Premium level apartments with the dest views of capital</p>
-                    </div>
-                    <div>
-                        <p>10 photo</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-    <div id="about">
-        <img src="assets/images/main_pic.png" alt="">
-    </div>
-    <footer>
-        <div></div>
-        <div></div>
-    </footer>
+<div class="container">
+    <header>
+        <div>
+            <img src="assets/images/logo.png" alt="" width="160px">
+        </div>
+        <nav>
+            <ul>
+                <li onclick="goToPage('about')">About</li>
+                <li onclick="goToPage('gallery')">Gallery</li>
+                <li onclick="goToPage('')">How to buy</li>
+                <li onclick="goToPage('')">Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="main-title">
+            <div class="w-50">
+                <h1 class="page-gallery d-none get-from-top animation-delay-3">Gallery</h1>
+                <p class="page-gallery d-none get-from-top">Gallery is divided into sections according to their residences</p>
 
-    <script src="assets/js/index.js"></script>
+                <h1 class="page-about get-from-top animation-delay-3">Project</h1>
+                <h1 class="page-about get-from-top animation-delay-2">concept</h1>
+            </div>
+            <div class="w-50">
+                <p class="page-about get-from-top">The prestigious location, author's architecture, well-maintained closed territory and its own
+                    branched infrastructure create a unique atmosphere and the most comfortable conditions to live,
+                    create&nbsp;and&nbsp;love.</p>
+            </div>
+        </div>
+        <div id="gallery" class="page-gallery d-none">
+            <div class="gallery-image"
+                 style="background-image: url('assets/images/pic1.png')">
+                <div class="image-info">
+                    <div>
+                        <p>Premium level apartments with the dest views of capital</p>
+                    </div>
+                    <div>
+                        <p>10 photo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-image"
+                 style="background-image: url('assets/images/pic2.png')">
+                <div class="image-info">
+                    <div>
+                        <p>Premium level apartments with the dest views of capital</p>
+                    </div>
+                    <div>
+                        <p>10 photo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-image"
+                 style="background-image: url('assets/images/pic3.png')">
+                <div class="image-info">
+                    <div>
+                        <p>Premium level apartments with the dest views of capital</p>
+                    </div>
+                    <div>
+                        <p>10 photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div id="about" class="page-about">
+    <img src="assets/images/main_pic.png" alt="">
+</div>
+<footer class="page-gallery d-none">
+    <div></div>
+    <div></div>
+</footer>
+
+<script src="assets/js/index.js"></script>
 </body>
 </html>

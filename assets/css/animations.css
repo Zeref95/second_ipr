@@ -1,0 +1,43 @@
+:root {
+    --one-step: 0.5s
+}
+header {
+    z-index: 999;
+}
+
+.get-from-top {
+    animation: getFromTop var(--one-step);
+    transform: translateY(-250px);
+    animation-fill-mode: forwards;
+}
+.animation-delay-1 {
+    animation-delay: 0.1s;
+}
+.animation-delay-2 {
+    animation-delay: 0.2s;
+}
+.animation-delay-3 {
+    animation-delay: 0.3s;
+}
+@keyframes getFromTop {
+    100% {
+        transform: translateY(0)
+    }
+}
+
+#about {
+    display: flex;
+    align-items: center;
+}
+#about img {
+    max-height: 20px;
+    margin-top: 250px;
+    animation: showImageAbout 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes showImageAbout {
+    100% {
+        max-height: 900px;
+        margin-top: 0;
+    }
+}
