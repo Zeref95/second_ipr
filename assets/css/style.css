@@ -1,5 +1,6 @@
 :root {
     --col-margin: 112px;
+    --color-orange: #fd5f1a;
 }
 * {
     margin: 0;
@@ -46,6 +47,9 @@ header nav ul li {
     align-items: center;
     justify-content: center;
 }
+header nav ul li:hover {
+    color: var(--color-orange);
+}
 #main-title {
     background-blend-mode: multiply;
     display: flex;
@@ -76,20 +80,23 @@ header nav ul li {
     justify-content: space-between;
 }
 .gallery-image  {
-    height: 70vh;
+    height: 65vh;
     width: 404px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     display: flex;
     color: white;
+
 }
-.gallery-image:hover + .gallery-image .image-info{
+.gallery-image:hover > .image-info{
     display: flex;
-    /*todo меняются местами*/
+    opacity: 1;
+    transition: .5s;
 }
 .gallery-image .image-info {
-    display: none;
+    display: flex;
+    opacity: 0;
     padding-left: 35px;
     background-color: rgba(51, 50, 50, 0.62);
     background-blend-mode: multiply;
@@ -110,12 +117,16 @@ header nav ul li {
 }
 #about img {
     width: 100%;
+    z-index: -1;
 }
-footer {
-   width: 100%;
-   height: 100%;
+.back-modal {
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
+    z-index: -1;
+}
+footer {
     z-index: -999;
     display: flex;
     flex-direction: column;
@@ -128,7 +139,7 @@ footer div:first-child {
 footer div:last-child {
     height: 50%;
     width: 100%;
-    background-color: orange;
+    background-color: var(--color-orange);
 }
 .w-50 {
     width: 50%;
@@ -145,4 +156,39 @@ footer div:last-child {
 
 header {
     z-index: 999;
+}
+
+.modal-1 {
+    background-color: #333334;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999999;
+    margin-left: calc(100vw - 300px - 20vw);
+    margin-top: -60px;
+}
+.modal-1>div:first-child {
+    color: white;
+    margin-left: 30px;
+}
+.modal-1>div:last-child>div{
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-orange);
+    margin-right: 10px;
+    cursor: pointer;
+}
+.modal-1>div:last-child>div>div {
+    position: relative;
+    width: 0;
+    height: 5px;
+}
+.modal-1>div:last-child>div>div::after {
+    content: '';
+    position: absolute;
+    right: -23px; top: 10px;
+    border: 5px solid transparent;
+    border-left: 5px solid #ffffff;
 }

@@ -35,9 +35,13 @@ function manageCloseClasses(doing) {
   for (let className in closeClasses) {
     $All('.'+className).forEach(el => {
       if (doing === 'add') {
-        el.classList.add(closeClasses[className]);
+        let delay = el.dataset.delayHide ?? 0;
+        setTimeout(() => {
+          el.classList.add(closeClasses[className]);
+        }, delay * 100)
+
       } else if (doing === 'remove') {
-        el.classList.remove(closeClasses[className]);
+          el.classList.remove(closeClasses[className]);
       }
     })
   }
