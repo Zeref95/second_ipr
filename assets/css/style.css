@@ -53,6 +53,9 @@ header nav ul li {
     justify-content: center;
     padding: 32px var(--col-margin) 80px;
 }
+#main-title p {
+    margin-left: 8px;
+}
 #main-title>div {
     z-index: -1;
 }
@@ -114,6 +117,9 @@ footer {
     position: fixed;
     top: 0;
     z-index: -999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 footer div:first-child {
     height: 50%;
@@ -130,4 +136,13 @@ footer div:last-child {
 
 .d-none {
     display: none !important;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    z-index: 999;
 }

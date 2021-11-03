@@ -1,43 +1,126 @@
 :root {
-    --one-step: 0.5s
+    --one-step: 0.5s;
+    --two-step: 1s;
 }
-header {
-    z-index: 999;
+html {
+    min-height: 101%;
+}
+
+.animation-delay-1 {
+    animation-delay: 0.3s !important;
+}
+.animation-delay-2 {
+    animation-delay: 0.6s !important;
+}
+.animation-delay-3 {
+    animation-delay: 0.8s !important;
 }
 
 .get-from-top {
-    animation: getFromTop var(--one-step);
     transform: translateY(-250px);
-    animation-fill-mode: forwards;
+    animation: getFromTop var(--two-step) forwards;
 }
-.animation-delay-1 {
-    animation-delay: 0.1s;
-}
-.animation-delay-2 {
-    animation-delay: 0.2s;
-}
-.animation-delay-3 {
-    animation-delay: 0.3s;
+.hide-to-top {
+    animation: hideToTop var(--one-step) 0 !important;
+    animation-delay: 0s !important;
 }
 @keyframes getFromTop {
+    0% {
+        transform: translateY(-250px);
+    }
     100% {
         transform: translateY(0)
     }
 }
-
-#about {
-    display: flex;
-    align-items: center;
+@keyframes hideToTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-250px)
+    }
 }
-#about img {
-    max-height: 20px;
+
+
+.show-image-about {
+    max-height: 0;
     margin-top: 250px;
-    animation: showImageAbout 1s;
-    animation-fill-mode: forwards;
+    animation: showImageAbout var(--two-step) forwards;
+}
+.hide-image-about {
+    animation: hideImageAbout var(--one-step) forwards;
+    animation-delay: 0s !important;
 }
 @keyframes showImageAbout {
+    0% {
+        max-height: 0;
+        margin-top: 250px;
+    }
     100% {
         max-height: 900px;
         margin-top: 0;
+    }
+}
+@keyframes hideImageAbout {
+    0% {
+        max-height: 900px;
+        margin-top: 0;
+    }
+    100% {
+        max-height: 0;
+        margin-top: 250px;
+    }
+}
+footer div:last-child {
+    height: 0;
+}
+.show-footer {
+    height: 0;
+    animation: showFooter 1s forwards;
+}
+.hide-footer {
+     animation: hideFooter var(--one-step) forwards;
+     animation-delay: 0s !important;
+ }
+@keyframes showFooter {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 50%;
+    }
+}
+
+@keyframes hideFooter {
+    0% {
+        height: 50%;
+    }
+    100% {
+        height: 0;
+    }
+}
+
+.get-from-bottom {
+    transform: translateY(800px);
+    animation: getFromBottom var(--one-step) forwards;
+}
+.hide-to-bottom {
+    animation: hideToBottom var(--one-step);
+    animation-delay: 0s !important;
+}
+@keyframes getFromBottom {
+    0% {
+        transform: translateY(800px);
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+@keyframes hideToBottom {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(800px)
     }
 }
