@@ -12,6 +12,10 @@ html, body {
     font-family: Arial, serif;
     color: #2a2a2a;
 }
+#logo {
+    width: 160px;
+    cursor: pointer;
+}
 .container {
     max-width: 1320px;
     margin: auto;
@@ -50,26 +54,26 @@ header nav ul li {
 header nav ul li:hover {
     color: var(--color-orange);
 }
-#main-title {
+.main-title {
     background-blend-mode: multiply;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 32px var(--col-margin) 80px;
 }
-#main-title p {
+.main-title p {
     margin-left: 8px;
 }
-#main-title>div {
+.main-title>div {
     z-index: -1;
 }
-#main-title h1 {
+.main-title h1 {
     font-size: 4.4em;
     margin-bottom: 15px;
     font-weight: 100;
     max-width: 100px;
 }
-#main-title div:last-child p{
+.main-title div:last-child p{
     max-width: 500px;
     line-height: 25px;
 }
@@ -158,7 +162,7 @@ header {
     z-index: 999;
 }
 
-.modal-1 {
+#modal-1 {
     background-color: #333334;
     width: 300px;
     height: 60px;
@@ -169,26 +173,56 @@ header {
     margin-left: calc(100vw - 300px - 20vw);
     margin-top: -60px;
 }
-.modal-1>div:first-child {
+#modal-1>div:first-child {
     color: white;
     margin-left: 30px;
 }
-.modal-1>div:last-child>div{
+#modal-1>div:last-child>div{
     width: 30px;
     height: 30px;
     background-color: var(--color-orange);
     margin-right: 10px;
     cursor: pointer;
 }
-.modal-1>div:last-child>div>div {
+#modal-1>div:last-child>div>div {
     position: relative;
     width: 0;
     height: 5px;
 }
-.modal-1>div:last-child>div>div::after {
+#modal-1>div:last-child>div>div::after {
     content: '';
     position: absolute;
     right: -23px; top: 10px;
     border: 5px solid transparent;
     border-left: 5px solid #ffffff;
+}
+
+.big-photo {
+    position: relative;
+    width: 100%;
+}
+.big-photo img {
+    width: 100%;
+}
+.big-photo-info {
+    position: absolute;
+    top: 40px;
+    left: 10vw;
+    width: 100%;
+    color: white;
+}
+.big-photo-info>div:first-child {
+    display: flex;
+}
+.big-photo-info>div:last-child {
+    margin-top: 30px;
+    font-size: 2.2em;
+}
+
+.small-cube {
+    width: 7px;
+    height: 7px;
+    margin-top: 7px;
+    margin-right: 14px;
+    background-color: var(--color-orange);
 }

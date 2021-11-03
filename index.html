@@ -12,7 +12,7 @@
 <div class="container">
     <header>
         <div>
-            <img src="assets/images/logo.png" alt="" width="160px">
+            <img id="logo" onclick="goToPage('about')" src="assets/images/logo.png" alt="">
         </div>
         <nav>
             <ul>
@@ -24,24 +24,30 @@
         </nav>
     </header>
     <main>
-        <div id="main-title">
+        <div class="main-title page-gallery d-none">
             <div class="w-50">
-                <h1 class="page-gallery d-none get-from-top animation-delay-3">Gallery</h1>
-                <p class="page-gallery d-none get-from-top">Gallery is divided into sections according to their residences</p>
-
-                <h1 class="page-about get-from-top animation-delay-3">Project</h1>
-                <h1 class="page-about get-from-top animation-delay-2">concept</h1>
+                <h1 class="d-none get-from-top animation-delay-3">Gallery</h1>
+                <p class="d-none get-from-top">Gallery is divided into sections according to their residences</p>
+            </div>
+        </div>
+        <div class="main-title page-about">
+            <div class="w-50">
+                <h1 class="get-from-top animation-delay-3">Project</h1>
+                <h1 class="get-from-top animation-delay-2">concept</h1>
             </div>
             <div class="w-50">
-                <p class="page-about get-from-top">The prestigious location, author's architecture, well-maintained closed territory and its own
+                <p class="get-from-top">The prestigious location, author's architecture, well-maintained closed territory and its own
                     branched infrastructure create a unique atmosphere and the most comfortable conditions to live,
                     create&nbsp;and&nbsp;love.</p>
             </div>
         </div>
+
         <div id="gallery" class="page-gallery d-none">
             <div class="gallery-image get-from-bottom animation-delay-1"
                  data-delay-hide="3"
-                 style="background-image: url('assets/images/pic1.png')">
+                 style="background-image: url('assets/images/pic1.png')"
+                 onclick="goToPage('big-photo')"
+            >
                 <div class="image-info">
                     <div>
                         <p>Premium level apartments with the dest views of capital</p>
@@ -53,7 +59,9 @@
             </div>
             <div class="gallery-image get-from-bottom animation-delay-2"
                  data-delay-hide="2"
-                 style="background-image: url('assets/images/pic2.png')">
+                 style="background-image: url('assets/images/pic2.png')"
+                 onclick="goToPage('big-photo')"
+            >
                 <div class="image-info">
                     <div>
                         <p>Premium level apartments with the dest views of capital</p>
@@ -65,7 +73,9 @@
             </div>
             <div class="gallery-image get-from-bottom animation-delay-3"
                  data-delay-hide="1"
-                 style="background-image: url('assets/images/pic3.png')">
+                 style="background-image: url('assets/images/pic3.png')"
+                 onclick="goToPage('big-photo')"
+            >
                 <div class="image-info">
                     <div>
                         <p>Premium level apartments with the dest views of capital</p>
@@ -79,10 +89,27 @@
     </main>
 </div>
 
+
+<div class="big-photo page-big-photo d-none show-big-photo">
+    <img src="assets/images/second_pic.png" alt="" class="show-big-photo">
+    <div class="big-photo-info">
+        <div>
+            <div class="small-cube"></div>
+            <div>Interiors</div>
+        </div>
+
+        <div>
+            Stark geometry reigns supreme <br>
+            throughout the dwelling, as all the rooms
+        </div>
+    </div>
+</div>
+
+
 <div id="about" class="page-about">
     <img class="show-image-about" src="assets/images/main_pic.png" alt="">
 </div>
-<div class="page-about modal-1">
+<div id="modal-1" class="page-about need-hide-momentarily">
     <div>
         <p>Let's explore</p>
     </div>
@@ -93,7 +120,7 @@
     </div>
 </div>
 
-<footer class="page-gallery d-none back-modal">
+<footer class="page-gallery d-none back-modal page-big-photo">
     <div></div>
     <div class="show-footer animation-delay-3"></div>
 </footer>

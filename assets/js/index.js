@@ -1,11 +1,12 @@
-const pageList = ['gallery', 'about'];
+const pageList = ['gallery', 'about', 'big-photo'];
 let currentPage = 'about';
 
 const closeClasses = {
   'show-image-about' : 'hide-image-about',
   'get-from-top' : 'hide-to-top',
   'show-footer': 'hide-footer',
-  'get-from-bottom': 'hide-to-bottom'
+  'get-from-bottom': 'hide-to-bottom',
+  'need-hide-momentarily': 'hide-momentarily'
 }
 
 function $All(str) {
