@@ -1,4 +1,4 @@
-let oneStep = 500; // if you gonna change this, change --one-step in animation.css as well
+const oneStep = 500; // if you gonna change this, change --one-step in animation.css as well
 
 const pageList = {
     'about': {
@@ -15,7 +15,6 @@ const pageList = {
     },
 }
 let currentPage = 'about';
-let canChangePage = true;
 
 const closeClasses = {
     'show-image-about': 'hide-image-about',
@@ -32,8 +31,7 @@ function $All(str) {
 
 function goToPage(pageName) {
     if (pageList.hasOwnProperty(pageName)
-        && pageName !== currentPage
-        && canChangePage) {
+        && pageName !== currentPage) {
         if (pageName === pageList[pageName].mainPageName) {
             manageNavAnimation(currentPage, pageName);
         }
@@ -83,7 +81,6 @@ async function manageNavAnimation(currentPage, targetPage) {
             currentNav.classList.remove('nav-active')
             targetNav.classList.remove('nav-active-show-from-left');
             currentNav.classList.remove('nav-active-hide-to-right');
-            canChangePage = true;
         }, oneStep)
 
     } else if (currentIndex > targetIndex) {
@@ -96,7 +93,6 @@ async function manageNavAnimation(currentPage, targetPage) {
             currentNav.classList.remove('nav-active-hide-to-left');
             currentNav.classList.remove('nav-active')
             targetNav.classList.remove('nav-active-show-from-right');
-            canChangePage = true;
         }, oneStep)
     }
 }
