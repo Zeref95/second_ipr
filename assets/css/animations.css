@@ -1,6 +1,6 @@
 :root {
     --half-step: 0.25s;
-    --one-step: 0.5s;
+    --one-step: 0.5s; /* if you gonna change this, change "oneStep" in index.js as well*/
     --two-step: 1s;
 }
 html {
@@ -136,7 +136,7 @@ footer div:last-child {
     animation: showBigPhoto var(--one-step) forwards;
 }
 .hide-big-photo {
-    animation: showBigPhoto var(--one-step) forwards;
+    animation: hideBigPhoto var(--one-step) forwards;
     animation-delay: 0s !important;
 }
 @keyframes showBigPhoto {
@@ -171,5 +171,63 @@ footer div:last-child {
     }
     100% {
         opacity: 100%;
+    }
+}
+
+.nav-active-hide-to-right::after {
+    animation: navHideToRight var(--one-step) forwards;
+}
+
+@keyframes navHideToRight {
+    0% {
+        width: 105px;
+        margin-left: 0;
+    }
+    100% {
+        width: 0;
+        margin-left: 105px;
+    }
+}
+
+.nav-active-hide-to-left::after {
+    animation: navHideToLeft var(--one-step) forwards;
+}
+
+@keyframes navHideToLeft {
+    0% {
+        width: 105px;
+        margin-right: 0;
+    }
+    100% {
+        width: 0;
+        margin-right: 105px;
+    }
+}
+
+.nav-active-show-from-left::after  {
+    animation: navShowFromLeft var(--one-step) forwards;
+}
+@keyframes navShowFromLeft {
+    0% {
+        width: 0;
+        margin-right: 105px;
+    }
+    100% {
+        width: 105px;
+        margin-right: 0;
+    }
+}
+
+.nav-active-show-from-right::after  {
+    animation: navShowFromRight var(--one-step) forwards;
+}
+@keyframes navShowFromRight {
+    0% {
+        width: 0;
+        margin-left: 105px;
+    }
+    100% {
+        width: 105px;
+        margin-left: 0;
     }
 }

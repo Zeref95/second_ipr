@@ -1,6 +1,7 @@
 :root {
     --col-margin: 112px;
-    --color-orange: #fd5f1a;
+    --color-orange: rgb(253, 95, 26);
+    --color-orange-transparent: rgba(253, 95, 26, 0.50);
 }
 * {
     margin: 0;
@@ -19,7 +20,6 @@ html, body {
 .container {
     max-width: 1320px;
     margin: auto;
-    /*background-image: url("template3.png");*/
 }
 
 header {
@@ -42,7 +42,6 @@ header nav ul {
     height: 100%;
 }
 header nav ul li {
-    padding: 0 15px;
     margin: 0 1px;
     width: 105px;
     cursor: pointer;
@@ -224,5 +223,76 @@ header {
     height: 7px;
     margin-top: 7px;
     margin-right: 14px;
+    background-color: var(--color-orange);
+}
+
+#photo-links-container {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 1000px;
+    margin-left: calc(50vw - 1000px/2);
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+}
+#photo-links-container>div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+#photo-links-container>div:first-child>div:first-child {
+    display: flex;
+    padding-bottom: 10px;
+}
+#photo-links-container img {
+    height: 80px;
+}
+#photo-links-container>div:last-child {
+    display: flex;
+    align-items: center;
+}
+#photo-links-container>div:last-child>div {
+    margin-right: 15px;
+    position: relative;
+    height: 80px;
+    cursor: pointer;
+}
+#photo-links-container>div:last-child>div:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--color-orange-transparent);
+}
+.photo-links-active::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    left: 0;
+    top: -15px;
+    background-color: var(--color-orange);
+}
+.orange-link {
+    color: var(--color-orange);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--color-orange);
+}
+
+.nav-active {
+    color: var(--color-orange);
+}
+.nav-active::after {
+    content: '';
+    width: 105px;
+    height: 5px;
+    position: absolute;
+    top: 0;
     background-color: var(--color-orange);
 }
